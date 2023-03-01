@@ -1,0 +1,345 @@
+openapi: 3.0.0
+info:
+  title: todoapp
+  version: 1.0.0
+servers:
+  - url: http://{{url}}
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+    undefinedAuth:
+      type: http
+tags:
+  - name: desktop
+    description: desktop APIs
+  - name: desktop > task
+    description: task Model APIs
+  - name: desktop > login
+    description: desktop Login
+paths:
+  /desktop/api/v1/task/{id}:
+    get:
+      tags:
+        - desktop > task
+      summary: gettask
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: SUCCESS
+                message: Your request is successfully executed
+                data:
+                  title: Tuna
+                  description: Account
+                  isCompleted: true
+                  id: 101
+                  isDeleted: false
+                  isActive: true
+                  createdAt: '2023-11-10T13:00:54.434Z'
+                  updatedAt: '2023-07-05T00:30:59.686Z'
+  /desktop/api/v1/task/create:
+    post:
+      tags:
+        - desktop > task
+      summary: addtask
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                title: Tuna
+                description: Account
+                isCompleted: true
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: SUCCESS
+                message: Your request is successfully executed
+                data:
+                  title: Tuna
+                  description: Account
+                  isCompleted: true
+                  id: 1
+                  isDeleted: false
+                  isActive: true
+                  createdAt: '2023-11-10T13:00:54.434Z'
+                  updatedAt: '2023-07-05T00:30:59.686Z'
+  /desktop/api/v1/task/list:
+    post:
+      tags:
+        - desktop > task
+      summary: findAlltask
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                query: {}
+                options:
+                  select:
+                    - field 1
+                    - field 2
+                  page: 1
+                  paginate: 2
+                isCountOnly: false
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: SUCCESS
+                message: Your request is successfully executed
+                data:
+                  data:
+                    - title: Tuna
+                      description: Account
+                      isCompleted: true
+                      id: 101
+                      isDeleted: false
+                      isActive: true
+                      createdAt: '2023-11-10T13:00:54.434Z'
+                      updatedAt: '2023-07-05T00:30:59.686Z'
+                  paginator:
+                    currentPage: 1
+                    itemCount: 1
+                    pageCount: 1
+                    perPage: 25
+  /desktop/api/v1/task/update/{id}:
+    put:
+      tags:
+        - desktop > task
+      summary: updatetask
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                title: Tuna
+                description: Account
+                isCompleted: true
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: SUCCESS
+                message: Your request is successfully executed
+                data:
+                  - title: Tuna
+                    description: Account
+                    isCompleted: true
+                    id: 101
+                    isDeleted: false
+                    isActive: true
+                    createdAt: '2023-11-10T13:00:54.434Z'
+                    updatedAt: '2023-07-05T00:30:59.686Z'
+  /desktop/api/v1/task/delete/{id}:
+    delete:
+      tags:
+        - desktop > task
+      summary: deletetask
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: SUCCESS
+                message: Your request is successfully executed
+                data:
+                  - title: Tuna
+                    description: Account
+                    isCompleted: true
+                    id: 101
+                    isDeleted: false
+                    isActive: true
+                    createdAt: '2023-11-10T13:00:54.434Z'
+                    updatedAt: '2023-07-05T00:30:59.686Z'
+  /desktop/auth/login:
+    post:
+      tags:
+        - desktop > login
+      summary: Login in desktop
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                username: username
+                password: password
+      security:
+        - undefinedAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: SUCCESS
+                message: Login Successful
+                data:
+                  email: Eloise.Lind69@hotmail.com
+                  name: Nichole Barrows
+                  mobileNo: (536) 648-5676
+                  username: Marley45
+                  id: 101
+                  token: >-
+                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMWRlZDVjMGFjMjAxMmFjMDI4ODkxZiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2MjkzNTEyNzAsImV4cCI6MTYyOTk1MTI3MH0.BJ-WKjNYeFDQ4pn8kfli5gwn6GLz_c3voFht20Agj9k
+                  isDeleted: false
+                  isActive: true
+                  createdAt: '2023-06-03T15:33:47.826Z'
+                  updatedAt: '2023-10-03T11:49:38.745Z'
+  /desktop/auth/register:
+    post:
+      tags:
+        - desktop > login
+      summary: Register User in desktop
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                password: ma3A4aInxc3z3IM
+                email: Eloise.Lind69@hotmail.com
+                name: Nichole Barrows
+                mobileNo: (536) 648-5676
+                username: Marley45
+      security:
+        - undefinedAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: SUCCESS
+                message: Your request is successfully executed
+                data:
+                  email: Eloise.Lind69@hotmail.com
+                  name: Nichole Barrows
+                  mobileNo: (536) 648-5676
+                  username: Marley45
+                  id: 101
+                  isDeleted: false
+                  isActive: true
+                  createdAt: '2023-06-03T15:33:47.826Z'
+                  updatedAt: '2023-10-03T11:49:38.745Z'
+  /desktop/auth/logout:
+    post:
+      tags:
+        - desktop > login
+      summary: Logout in desktop
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

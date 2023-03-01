@@ -1,0 +1,351 @@
+{
+  "info": {
+    "name": "todoapp",
+    "_postman_id": "fc8ecd65-0ed0-49ef-b8ee-b9cfee1af4f0",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "desktop",
+      "description": "desktop APIs",
+      "item": [
+        {
+          "name": "task",
+          "description": "task Model APIs",
+          "item": [
+            {
+              "name": "gettask",
+              "request": {
+                "url": "{{url}}/desktop/api/v1/task/:id",
+                "method": "GET",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "gettask_response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/task/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"title\": \"Tuna\",\n    \"description\": \"Account\",\n    \"isCompleted\": true,\n    \"id\": 101,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-11-10T13:00:54.434Z\",\n    \"updatedAt\": \"2023-07-05T00:30:59.686Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "addtask",
+              "request": {
+                "url": "{{url}}/desktop/api/v1/task/create",
+                "method": "POST",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"Tuna\",\n  \"description\": \"Account\",\n  \"isCompleted\": true\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "addtask_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/task/create"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"title\": \"Tuna\",\n    \"description\": \"Account\",\n    \"isCompleted\": true,\n    \"id\": 1,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-11-10T13:00:54.434Z\",\n    \"updatedAt\": \"2023-07-05T00:30:59.686Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "findAlltask",
+              "request": {
+                "url": "{{url}}/desktop/api/v1/task/list",
+                "method": "POST",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": {},\n  \"options\": {\n    \"select\": [\n      \"field 1\",\n      \"field 2\"\n    ],\n    \"page\": 1,\n    \"paginate\": 2\n  },\n  \"isCountOnly\": false\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "findAlltask_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/task/list"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"title\": \"Tuna\",\n        \"description\": \"Account\",\n        \"isCompleted\": true,\n        \"id\": 101,\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-11-10T13:00:54.434Z\",\n        \"updatedAt\": \"2023-07-05T00:30:59.686Z\"\n      }\n    ],\n    \"paginator\": {\n      \"currentPage\": 1,\n      \"itemCount\": 1,\n      \"pageCount\": 1,\n      \"perPage\": 25\n    }\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updatetask",
+              "request": {
+                "url": "{{url}}/desktop/api/v1/task/update/:id",
+                "method": "PUT",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"Tuna\",\n  \"description\": \"Account\",\n  \"isCompleted\": true\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "updatetask_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/task/update/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"title\": \"Tuna\",\n      \"description\": \"Account\",\n      \"isCompleted\": true,\n      \"id\": 101,\n      \"isDeleted\": false,\n      \"isActive\": true,\n      \"createdAt\": \"2023-11-10T13:00:54.434Z\",\n      \"updatedAt\": \"2023-07-05T00:30:59.686Z\"\n    }\n  ]\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "deletetask",
+              "request": {
+                "url": "{{url}}/desktop/api/v1/task/delete/:id",
+                "method": "DELETE",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isWarning\": true\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "deletetask_response",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/task/delete/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"title\": \"Tuna\",\n      \"description\": \"Account\",\n      \"isCompleted\": true,\n      \"id\": 101,\n      \"isDeleted\": false,\n      \"isActive\": true,\n      \"createdAt\": \"2023-11-10T13:00:54.434Z\",\n      \"updatedAt\": \"2023-07-05T00:30:59.686Z\"\n    }\n  ]\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            }
+          ]
+        },
+        {
+          "name": "login",
+          "description": "desktop Login",
+          "item": [
+            {
+              "name": "Login in desktop",
+              "request": {
+                "url": "{{url}}/desktop/auth/login",
+                "method": "POST",
+                "auth": {},
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"username\",\n  \"password\": \"password\"\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "Login in desktop_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/auth/login"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Login Successful\",\n  \"data\": {\n    \"email\": \"Eloise.Lind69@hotmail.com\",\n    \"name\": \"Nichole Barrows\",\n    \"mobileNo\": \"(536) 648-5676\",\n    \"username\": \"Marley45\",\n    \"id\": 101,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMWRlZDVjMGFjMjAxMmFjMDI4ODkxZiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2MjkzNTEyNzAsImV4cCI6MTYyOTk1MTI3MH0.BJ-WKjNYeFDQ4pn8kfli5gwn6GLz_c3voFht20Agj9k\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-06-03T15:33:47.826Z\",\n    \"updatedAt\": \"2023-10-03T11:49:38.745Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "Register User in desktop",
+              "request": {
+                "url": "{{url}}/desktop/auth/register",
+                "method": "POST",
+                "auth": {},
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"password\": \"ma3A4aInxc3z3IM\",\n  \"email\": \"Eloise.Lind69@hotmail.com\",\n  \"name\": \"Nichole Barrows\",\n  \"mobileNo\": \"(536) 648-5676\",\n  \"username\": \"Marley45\"\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "Register User in desktop_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/auth/register"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"email\": \"Eloise.Lind69@hotmail.com\",\n    \"name\": \"Nichole Barrows\",\n    \"mobileNo\": \"(536) 648-5676\",\n    \"username\": \"Marley45\",\n    \"id\": 101,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-06-03T15:33:47.826Z\",\n    \"updatedAt\": \"2023-10-03T11:49:38.745Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "Logout in desktop",
+              "request": {
+                "url": "{{url}}/desktop/auth/logout",
+                "method": "POST",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": ""
+              },
+              "_postman_isSubFolder": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

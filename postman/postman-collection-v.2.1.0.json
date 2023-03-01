@@ -1,0 +1,4011 @@
+{
+  "info": {
+    "name": "todoapp",
+    "_postman_id": "c48bf26f-6b83-4e23-bfee-3c8e8249f172",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "desktop",
+      "description": "desktop APIs",
+      "item": [
+        {
+          "name": "task",
+          "description": "task Model APIs",
+          "item": [
+            {
+              "name": "gettask",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/task/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "task",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "gettask_response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/task/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"title\": \"Tuna\",\n    \"description\": \"Account\",\n    \"isCompleted\": true,\n    \"id\": 101,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-11-10T13:00:54.434Z\",\n    \"updatedAt\": \"2023-07-05T00:30:59.686Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "addtask",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/task/create",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "task",
+                    "create"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"Tuna\",\n  \"description\": \"Account\",\n  \"isCompleted\": true\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "addtask_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/task/create"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"title\": \"Tuna\",\n    \"description\": \"Account\",\n    \"isCompleted\": true,\n    \"id\": 1,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-11-10T13:00:54.434Z\",\n    \"updatedAt\": \"2023-07-05T00:30:59.686Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "insertBulktask",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/task/addBulk",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "task",
+                    "addBulk"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": [\n    {\n      \"title\": \"Tuna\",\n      \"description\": \"Account\",\n      \"isCompleted\": true\n    }\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "addtask_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/task/addBulk"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "findAlltask",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/task/list",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "task",
+                    "list"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": {},\n  \"options\": {\n    \"select\": [\n      \"field 1\",\n      \"field 2\"\n    ],\n    \"page\": 1,\n    \"paginate\": 2\n  },\n  \"isCountOnly\": false\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "findAlltask_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/task/list"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"title\": \"Tuna\",\n        \"description\": \"Account\",\n        \"isCompleted\": true,\n        \"id\": 101,\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-11-10T13:00:54.434Z\",\n        \"updatedAt\": \"2023-07-05T00:30:59.686Z\"\n      }\n    ],\n    \"paginator\": {\n      \"currentPage\": 1,\n      \"itemCount\": 1,\n      \"pageCount\": 1,\n      \"perPage\": 25\n    }\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "gettaskCount",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/task/count",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "task",
+                    "count"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"where\": {\n    \"isActive\": true\n  }\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "gettaskCount_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/task/count"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 10\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "deleteManytask",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/task/deleteMany",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "task",
+                    "deleteMany"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isWarning\": true,\n  \"ids\": [\n    \":id\"\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "deleteManytask_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/task/deleteMany"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 1\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updatetask",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/task/update/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "task",
+                    "update",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"Tuna\",\n  \"description\": \"Account\",\n  \"isCompleted\": true\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "updatetask_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/task/update/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"title\": \"Tuna\",\n      \"description\": \"Account\",\n      \"isCompleted\": true,\n      \"id\": 101,\n      \"isDeleted\": false,\n      \"isActive\": true,\n      \"createdAt\": \"2023-11-10T13:00:54.434Z\",\n      \"updatedAt\": \"2023-07-05T00:30:59.686Z\"\n    }\n  ]\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "partialupdatetask",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/task/partial-update/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "task",
+                    "partial-update",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isActive\": true,\n  \"isDeleted\": false\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "partialupdatetask_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/task/partial-update/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"title\": \"Tuna\",\n      \"description\": \"Account\",\n      \"isCompleted\": true,\n      \"id\": 1,\n      \"isDeleted\": false,\n      \"isActive\": true,\n      \"createdAt\": \"2023-11-10T13:00:54.434Z\",\n      \"updatedAt\": \"2023-07-05T00:30:59.686Z\"\n    }\n  ]\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updateBulktask",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/task/updateBulk",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "task",
+                    "updateBulk"
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter\": {\n    \"isActive\": true\n  },\n  \"data\": {\n    \"isDeleted\": false\n  }\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "updateBulktask_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/task/updateBulk"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "softDeletetask",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/task/softDelete/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "task",
+                    "softDelete",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "softDeletetask_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/task/softDelete/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"title\": \"Tuna\",\n    \"description\": \"Account\",\n    \"isCompleted\": true,\n    \"id\": 101,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-11-10T13:00:54.434Z\",\n    \"updatedAt\": \"2023-07-05T00:30:59.686Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "softDeleteManytask",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/task/softDeleteMany",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "task",
+                    "softDeleteMany"
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \":id\"\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "softDeleteManytask_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/task/softDeleteMany"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 1\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "deletetask",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/task/delete/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "task",
+                    "delete",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isWarning\": true\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "deletetask_response",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/task/delete/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"title\": \"Tuna\",\n      \"description\": \"Account\",\n      \"isCompleted\": true,\n      \"id\": 101,\n      \"isDeleted\": false,\n      \"isActive\": true,\n      \"createdAt\": \"2023-11-10T13:00:54.434Z\",\n      \"updatedAt\": \"2023-07-05T00:30:59.686Z\"\n    }\n  ]\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            }
+          ]
+        },
+        {
+          "name": "user",
+          "description": "user Model APIs",
+          "item": [
+            {
+              "name": "get loggedin User",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/user/me",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "user",
+                    "me"
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "loggedInUserInfo_response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/user/me"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"email\": \"Eloise.Lind69@hotmail.com\",\n    \"name\": \"Nichole Barrows\",\n    \"userType\": 1,\n    \"mobileNo\": \"(536) 648-5676\",\n    \"username\": \"Marley45\",\n    \"id\": 101,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-04-08T02:35:42.724Z\",\n    \"updatedAt\": \"2023-11-30T03:26:28.565Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updateProfile",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/user/update-profile",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "user",
+                    "update-profile"
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"password\": \"ma3A4aInxc3z3IM\",\n  \"email\": \"Eloise.Lind69@hotmail.com\",\n  \"name\": \"Nichole Barrows\",\n  \"userType\": 1,\n  \"mobileNo\": \"(536) 648-5676\",\n  \"username\": \"Marley45\"\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "updateProfileuser_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/user/update-profile"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"email\": \"Eloise.Lind69@hotmail.com\",\n      \"name\": \"Nichole Barrows\",\n      \"userType\": 1,\n      \"mobileNo\": \"(536) 648-5676\",\n      \"username\": \"Marley45\",\n      \"id\": 101,\n      \"isDeleted\": false,\n      \"isActive\": true,\n      \"createdAt\": \"2023-04-08T02:35:42.724Z\",\n      \"updatedAt\": \"2023-11-30T03:26:28.565Z\"\n    }\n  ]\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            }
+          ]
+        },
+        {
+          "name": "login",
+          "description": "desktop Login",
+          "item": [
+            {
+              "name": "Login in desktop",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/auth/login",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "auth",
+                    "login"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"username\",\n  \"password\": \"password\"\n}"
+                },
+                "description": "",
+                "auth": {}
+              },
+              "response": [
+                {
+                  "name": "Login in desktop_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/auth/login"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Login Successful\",\n  \"data\": {\n    \"email\": \"Eloise.Lind69@hotmail.com\",\n    \"name\": \"Nichole Barrows\",\n    \"mobileNo\": \"(536) 648-5676\",\n    \"username\": \"Marley45\",\n    \"id\": 101,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMWRlZDVjMGFjMjAxMmFjMDI4ODkxZiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2MjkzNTEyNzAsImV4cCI6MTYyOTk1MTI3MH0.BJ-WKjNYeFDQ4pn8kfli5gwn6GLz_c3voFht20Agj9k\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-06-03T15:33:47.826Z\",\n    \"updatedAt\": \"2023-10-03T11:49:38.745Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "Register User in desktop",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/auth/register",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "auth",
+                    "register"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"password\": \"ma3A4aInxc3z3IM\",\n  \"email\": \"Eloise.Lind69@hotmail.com\",\n  \"name\": \"Nichole Barrows\",\n  \"mobileNo\": \"(536) 648-5676\",\n  \"username\": \"Marley45\"\n}"
+                },
+                "description": "",
+                "auth": {}
+              },
+              "response": [
+                {
+                  "name": "Register User in desktop_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/auth/register"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"email\": \"Eloise.Lind69@hotmail.com\",\n    \"name\": \"Nichole Barrows\",\n    \"mobileNo\": \"(536) 648-5676\",\n    \"username\": \"Marley45\",\n    \"id\": 101,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-06-03T15:33:47.826Z\",\n    \"updatedAt\": \"2023-10-03T11:49:38.745Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "Forgot Password in desktop",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/auth/forgot-password",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "auth",
+                    "forgot-password"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"yourmail@gmail.com\"\n}"
+                },
+                "description": "",
+                "auth": {}
+              },
+              "response": [
+                {
+                  "name": "Forgot Password in desktop_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/auth/forgot-password"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"otp successfully send to your email.\",\n  \"data\": {}\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "Validate OTP in desktop",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/auth/validate-otp",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "auth",
+                    "validate-otp"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"otp\": \"5898\"\n}"
+                },
+                "description": "",
+                "auth": {}
+              },
+              "response": [
+                {
+                  "name": "Validate OTP in desktop_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/auth/validate-otp"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Invalid OTP\",\n  \"data\": {}\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "Logout in desktop",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/auth/logout",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "auth",
+                    "logout"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "Change Password in desktop",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/user/change-password",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "user",
+                    "change-password"
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"oldPassword\": \"OldPassword\",\n  \"newPassword\": \"NewPassword\"\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Change Password in desktop_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/user/change-password"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Password changed successfully\",\n  \"data\": {}\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "Reset password in desktop",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/auth/reset-password",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "auth",
+                    "reset-password"
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"5898\",\n  \"newPassword\": \"yourPassword\"\n}"
+                },
+                "description": "",
+                "auth": {}
+              },
+              "response": [
+                {
+                  "name": "Reset password in desktop_response~",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/auth/reset-password"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Password reset successfully\",\n  \"data\": {}\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            }
+          ]
+        },
+        {
+          "name": "role",
+          "description": "role Model APIs",
+          "item": [
+            {
+              "name": "getrole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/role/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "role",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "getrole_response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/role/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Darrin Doyle\",\n    \"code\": \"Avon\",\n    \"weight\": 54,\n    \"id\": 101,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-07-19T20:55:23.588Z\",\n    \"updatedAt\": \"2023-07-07T15:32:17.639Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "addrole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/role/create",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "role",
+                    "create"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Darrin Doyle\",\n  \"code\": \"Avon\",\n  \"weight\": 54\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "addrole_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/role/create"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Darrin Doyle\",\n    \"code\": \"Avon\",\n    \"weight\": 54,\n    \"id\": 1,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-07-19T20:55:23.588Z\",\n    \"updatedAt\": \"2023-07-07T15:32:17.639Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "insertBulkrole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/role/addBulk",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "role",
+                    "addBulk"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": [\n    {\n      \"name\": \"Darrin Doyle\",\n      \"code\": \"Avon\",\n      \"weight\": 54\n    }\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "addrole_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/role/addBulk"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "findAllrole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/role/list",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "role",
+                    "list"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": {},\n  \"options\": {\n    \"select\": [\n      \"field 1\",\n      \"field 2\"\n    ],\n    \"page\": 1,\n    \"paginate\": 2\n  },\n  \"isCountOnly\": false\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "findAllrole_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/role/list"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"name\": \"Darrin Doyle\",\n        \"code\": \"Avon\",\n        \"weight\": 54,\n        \"id\": 101,\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-07-19T20:55:23.588Z\",\n        \"updatedAt\": \"2023-07-07T15:32:17.639Z\"\n      }\n    ],\n    \"paginator\": {\n      \"currentPage\": 1,\n      \"itemCount\": 1,\n      \"pageCount\": 1,\n      \"perPage\": 25\n    }\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "getroleCount",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/role/count",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "role",
+                    "count"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"where\": {\n    \"isActive\": true\n  }\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "getroleCount_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/role/count"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 10\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "deleteManyrole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/role/deleteMany",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "role",
+                    "deleteMany"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isWarning\": true,\n  \"ids\": [\n    \":id\"\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "deleteManyrole_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/role/deleteMany"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 1\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updateBulkrole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/role/updateBulk",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "role",
+                    "updateBulk"
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter\": {\n    \"isActive\": true\n  },\n  \"data\": {\n    \"isDeleted\": false\n  }\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "updateBulkrole_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/role/updateBulk"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "softDeleteManyrole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/role/softDeleteMany",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "role",
+                    "softDeleteMany"
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \":id\"\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "softDeleteManyrole_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/role/softDeleteMany"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 1\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "softDeleterole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/role/softDelete/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "role",
+                    "softDelete",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "softDeleterole_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/role/softDelete/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Darrin Doyle\",\n    \"code\": \"Avon\",\n    \"weight\": 54,\n    \"id\": 101,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-07-19T20:55:23.588Z\",\n    \"updatedAt\": \"2023-07-07T15:32:17.639Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "partialupdaterole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/role/partial-update/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "role",
+                    "partial-update",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isActive\": true,\n  \"isDeleted\": false\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "partialupdaterole_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/role/partial-update/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"name\": \"Darrin Doyle\",\n      \"code\": \"Avon\",\n      \"weight\": 54,\n      \"id\": 1,\n      \"isDeleted\": false,\n      \"isActive\": true,\n      \"createdAt\": \"2023-07-19T20:55:23.588Z\",\n      \"updatedAt\": \"2023-07-07T15:32:17.639Z\"\n    }\n  ]\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updaterole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/role/update/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "role",
+                    "update",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Darrin Doyle\",\n  \"code\": \"Avon\",\n  \"weight\": 54\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "updaterole_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/role/update/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"name\": \"Darrin Doyle\",\n      \"code\": \"Avon\",\n      \"weight\": 54,\n      \"id\": 101,\n      \"isDeleted\": false,\n      \"isActive\": true,\n      \"createdAt\": \"2023-07-19T20:55:23.588Z\",\n      \"updatedAt\": \"2023-07-07T15:32:17.639Z\"\n    }\n  ]\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "deleterole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/role/delete/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "role",
+                    "delete",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isWarning\": true\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "deleterole_response",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/role/delete/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"name\": \"Darrin Doyle\",\n      \"code\": \"Avon\",\n      \"weight\": 54,\n      \"id\": 101,\n      \"isDeleted\": false,\n      \"isActive\": true,\n      \"createdAt\": \"2023-07-19T20:55:23.588Z\",\n      \"updatedAt\": \"2023-07-07T15:32:17.639Z\"\n    }\n  ]\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            }
+          ]
+        },
+        {
+          "name": "projectRoute",
+          "description": "projectRoute Model APIs",
+          "item": [
+            {
+              "name": "getprojectRoute",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/projectroute/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "projectroute",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "getprojectRoute_response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/projectroute/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"route_name\": \"Pants\",\n    \"method\": \"Bike\",\n    \"uri\": \"Account\",\n    \"id\": 101,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-04-23T09:48:08.413Z\",\n    \"updatedAt\": \"2023-05-01T18:04:29.325Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "addprojectRoute",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/projectroute/create",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "projectroute",
+                    "create"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"route_name\": \"Pants\",\n  \"method\": \"Bike\",\n  \"uri\": \"Account\"\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "addprojectRoute_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/projectroute/create"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"route_name\": \"Pants\",\n    \"method\": \"Bike\",\n    \"uri\": \"Account\",\n    \"id\": 1,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-04-23T09:48:08.413Z\",\n    \"updatedAt\": \"2023-05-01T18:04:29.325Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "insertBulkprojectRoute",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/projectroute/addBulk",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "projectroute",
+                    "addBulk"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": [\n    {\n      \"route_name\": \"Pants\",\n      \"method\": \"Bike\",\n      \"uri\": \"Account\"\n    }\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "addprojectRoute_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/projectroute/addBulk"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "findAllprojectRoute",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/projectroute/list",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "projectroute",
+                    "list"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": {},\n  \"options\": {\n    \"select\": [\n      \"field 1\",\n      \"field 2\"\n    ],\n    \"page\": 1,\n    \"paginate\": 2\n  },\n  \"isCountOnly\": false\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "findAllprojectRoute_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/projectroute/list"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"route_name\": \"Pants\",\n        \"method\": \"Bike\",\n        \"uri\": \"Account\",\n        \"id\": 101,\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-04-23T09:48:08.413Z\",\n        \"updatedAt\": \"2023-05-01T18:04:29.325Z\"\n      }\n    ],\n    \"paginator\": {\n      \"currentPage\": 1,\n      \"itemCount\": 1,\n      \"pageCount\": 1,\n      \"perPage\": 25\n    }\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "getprojectRouteCount",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/projectroute/count",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "projectroute",
+                    "count"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"where\": {\n    \"isActive\": true\n  }\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "getprojectRouteCount_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/projectroute/count"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 10\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "deleteManyprojectRoute",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/projectroute/deleteMany",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "projectroute",
+                    "deleteMany"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isWarning\": true,\n  \"ids\": [\n    \":id\"\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "deleteManyprojectRoute_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/projectroute/deleteMany"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 1\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updateBulkprojectRoute",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/projectroute/updateBulk",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "projectroute",
+                    "updateBulk"
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter\": {\n    \"isActive\": true\n  },\n  \"data\": {\n    \"isDeleted\": false\n  }\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "updateBulkprojectRoute_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/projectroute/updateBulk"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "softDeleteManyprojectRoute",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/projectroute/softDeleteMany",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "projectroute",
+                    "softDeleteMany"
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \":id\"\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "softDeleteManyprojectRoute_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/projectroute/softDeleteMany"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 1\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "softDeleteprojectRoute",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/projectroute/softDelete/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "projectroute",
+                    "softDelete",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "softDeleteprojectRoute_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/projectroute/softDelete/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"route_name\": \"Pants\",\n    \"method\": \"Bike\",\n    \"uri\": \"Account\",\n    \"id\": 101,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-04-23T09:48:08.413Z\",\n    \"updatedAt\": \"2023-05-01T18:04:29.325Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "partialupdateprojectRoute",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/projectroute/partial-update/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "projectroute",
+                    "partial-update",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isActive\": true,\n  \"isDeleted\": false\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "partialupdateprojectRoute_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/projectroute/partial-update/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"route_name\": \"Pants\",\n      \"method\": \"Bike\",\n      \"uri\": \"Account\",\n      \"id\": 1,\n      \"isDeleted\": false,\n      \"isActive\": true,\n      \"createdAt\": \"2023-04-23T09:48:08.413Z\",\n      \"updatedAt\": \"2023-05-01T18:04:29.325Z\"\n    }\n  ]\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updateprojectRoute",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/projectroute/update/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "projectroute",
+                    "update",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"route_name\": \"Pants\",\n  \"method\": \"Bike\",\n  \"uri\": \"Account\"\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "updateprojectRoute_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/projectroute/update/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"route_name\": \"Pants\",\n      \"method\": \"Bike\",\n      \"uri\": \"Account\",\n      \"id\": 101,\n      \"isDeleted\": false,\n      \"isActive\": true,\n      \"createdAt\": \"2023-04-23T09:48:08.413Z\",\n      \"updatedAt\": \"2023-05-01T18:04:29.325Z\"\n    }\n  ]\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "deleteprojectRoute",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/projectroute/delete/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "projectroute",
+                    "delete",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isWarning\": true\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "deleteprojectRoute_response",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/projectroute/delete/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"route_name\": \"Pants\",\n      \"method\": \"Bike\",\n      \"uri\": \"Account\",\n      \"id\": 101,\n      \"isDeleted\": false,\n      \"isActive\": true,\n      \"createdAt\": \"2023-04-23T09:48:08.413Z\",\n      \"updatedAt\": \"2023-05-01T18:04:29.325Z\"\n    }\n  ]\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            }
+          ]
+        },
+        {
+          "name": "routeRole",
+          "description": "routeRole Model APIs",
+          "item": [
+            {
+              "name": "getrouteRole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/routerole/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "routerole",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "getrouteRole_response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/routerole/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"routeId\": 680,\n    \"roleId\": 529,\n    \"id\": 101,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-03-07T17:58:13.574Z\",\n    \"updatedAt\": \"2023-11-22T07:45:13.253Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "addrouteRole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/routerole/create",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "routerole",
+                    "create"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"routeId\": 680,\n  \"roleId\": 529\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "addrouteRole_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/routerole/create"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"routeId\": 680,\n    \"roleId\": 529,\n    \"id\": 1,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-03-07T17:58:13.574Z\",\n    \"updatedAt\": \"2023-11-22T07:45:13.253Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "insertBulkrouteRole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/routerole/addBulk",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "routerole",
+                    "addBulk"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": [\n    {\n      \"routeId\": 680,\n      \"roleId\": 529\n    }\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "addrouteRole_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/routerole/addBulk"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "findAllrouteRole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/routerole/list",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "routerole",
+                    "list"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": {},\n  \"options\": {\n    \"select\": [\n      \"field 1\",\n      \"field 2\"\n    ],\n    \"page\": 1,\n    \"paginate\": 2\n  },\n  \"isCountOnly\": false\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "findAllrouteRole_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/routerole/list"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"routeId\": 680,\n        \"roleId\": 529,\n        \"id\": 101,\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-03-07T17:58:13.574Z\",\n        \"updatedAt\": \"2023-11-22T07:45:13.253Z\"\n      }\n    ],\n    \"paginator\": {\n      \"currentPage\": 1,\n      \"itemCount\": 1,\n      \"pageCount\": 1,\n      \"perPage\": 25\n    }\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "getrouteRoleCount",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/routerole/count",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "routerole",
+                    "count"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"where\": {\n    \"isActive\": true\n  }\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "getrouteRoleCount_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/routerole/count"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 10\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "deleteManyrouteRole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/routerole/deleteMany",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "routerole",
+                    "deleteMany"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isWarning\": true,\n  \"ids\": [\n    \":id\"\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "deleteManyrouteRole_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/routerole/deleteMany"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 1\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updateBulkrouteRole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/routerole/updateBulk",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "routerole",
+                    "updateBulk"
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter\": {\n    \"isActive\": true\n  },\n  \"data\": {\n    \"isDeleted\": false\n  }\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "updateBulkrouteRole_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/routerole/updateBulk"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "softDeleteManyrouteRole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/routerole/softDeleteMany",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "routerole",
+                    "softDeleteMany"
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \":id\"\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "softDeleteManyrouteRole_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/routerole/softDeleteMany"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 1\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "softDeleterouteRole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/routerole/softDelete/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "routerole",
+                    "softDelete",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "softDeleterouteRole_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/routerole/softDelete/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"routeId\": 680,\n    \"roleId\": 529,\n    \"id\": 101,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-03-07T17:58:13.574Z\",\n    \"updatedAt\": \"2023-11-22T07:45:13.253Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "partialupdaterouteRole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/routerole/partial-update/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "routerole",
+                    "partial-update",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isActive\": true,\n  \"isDeleted\": false\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "partialupdaterouteRole_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/routerole/partial-update/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"routeId\": 680,\n      \"roleId\": 529,\n      \"id\": 1,\n      \"isDeleted\": false,\n      \"isActive\": true,\n      \"createdAt\": \"2023-03-07T17:58:13.574Z\",\n      \"updatedAt\": \"2023-11-22T07:45:13.253Z\"\n    }\n  ]\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updaterouteRole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/routerole/update/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "routerole",
+                    "update",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"routeId\": 680,\n  \"roleId\": 529\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "updaterouteRole_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/routerole/update/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"routeId\": 680,\n      \"roleId\": 529,\n      \"id\": 101,\n      \"isDeleted\": false,\n      \"isActive\": true,\n      \"createdAt\": \"2023-03-07T17:58:13.574Z\",\n      \"updatedAt\": \"2023-11-22T07:45:13.253Z\"\n    }\n  ]\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "deleterouteRole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/routerole/delete/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "routerole",
+                    "delete",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isWarning\": true\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "deleterouteRole_response",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/routerole/delete/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"routeId\": 680,\n      \"roleId\": 529,\n      \"id\": 101,\n      \"isDeleted\": false,\n      \"isActive\": true,\n      \"createdAt\": \"2023-03-07T17:58:13.574Z\",\n      \"updatedAt\": \"2023-11-22T07:45:13.253Z\"\n    }\n  ]\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            }
+          ]
+        },
+        {
+          "name": "userRole",
+          "description": "userRole Model APIs",
+          "item": [
+            {
+              "name": "getuserRole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/userrole/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "userrole",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "getuserRole_response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/userrole/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"userId\": 285,\n    \"roleId\": 656,\n    \"id\": 101,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-07-15T01:01:42.849Z\",\n    \"updatedAt\": \"2023-08-22T23:05:43.088Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "adduserRole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/userrole/create",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "userrole",
+                    "create"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": 285,\n  \"roleId\": 656\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "adduserRole_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/userrole/create"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"userId\": 285,\n    \"roleId\": 656,\n    \"id\": 1,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-07-15T01:01:42.849Z\",\n    \"updatedAt\": \"2023-08-22T23:05:43.088Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "insertBulkuserRole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/userrole/addBulk",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "userrole",
+                    "addBulk"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": [\n    {\n      \"userId\": 285,\n      \"roleId\": 656\n    }\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "adduserRole_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/userrole/addBulk"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "findAlluserRole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/userrole/list",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "userrole",
+                    "list"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": {},\n  \"options\": {\n    \"select\": [\n      \"field 1\",\n      \"field 2\"\n    ],\n    \"page\": 1,\n    \"paginate\": 2\n  },\n  \"isCountOnly\": false\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "findAlluserRole_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/userrole/list"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"userId\": 285,\n        \"roleId\": 656,\n        \"id\": 101,\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-07-15T01:01:42.849Z\",\n        \"updatedAt\": \"2023-08-22T23:05:43.088Z\"\n      }\n    ],\n    \"paginator\": {\n      \"currentPage\": 1,\n      \"itemCount\": 1,\n      \"pageCount\": 1,\n      \"perPage\": 25\n    }\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "getuserRoleCount",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/userrole/count",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "userrole",
+                    "count"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"where\": {\n    \"isActive\": true\n  }\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "getuserRoleCount_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/userrole/count"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 10\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "deleteManyuserRole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/userrole/deleteMany",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "userrole",
+                    "deleteMany"
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isWarning\": true,\n  \"ids\": [\n    \":id\"\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "deleteManyuserRole_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/userrole/deleteMany"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 1\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updateBulkuserRole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/userrole/updateBulk",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "userrole",
+                    "updateBulk"
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter\": {\n    \"isActive\": true\n  },\n  \"data\": {\n    \"isDeleted\": false\n  }\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "updateBulkuserRole_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/userrole/updateBulk"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "softDeleteManyuserRole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/userrole/softDeleteMany",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "userrole",
+                    "softDeleteMany"
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \":id\"\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "softDeleteManyuserRole_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/userrole/softDeleteMany"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 1\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "softDeleteuserRole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/userrole/softDelete/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "userrole",
+                    "softDelete",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "softDeleteuserRole_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/userrole/softDelete/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"userId\": 285,\n    \"roleId\": 656,\n    \"id\": 101,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-07-15T01:01:42.849Z\",\n    \"updatedAt\": \"2023-08-22T23:05:43.088Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "partialupdateuserRole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/userrole/partial-update/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "userrole",
+                    "partial-update",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isActive\": true,\n  \"isDeleted\": false\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "partialupdateuserRole_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/userrole/partial-update/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"userId\": 285,\n      \"roleId\": 656,\n      \"id\": 1,\n      \"isDeleted\": false,\n      \"isActive\": true,\n      \"createdAt\": \"2023-07-15T01:01:42.849Z\",\n      \"updatedAt\": \"2023-08-22T23:05:43.088Z\"\n    }\n  ]\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updateuserRole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/userrole/update/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "userrole",
+                    "update",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": 285,\n  \"roleId\": 656\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "updateuserRole_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/userrole/update/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"userId\": 285,\n      \"roleId\": 656,\n      \"id\": 101,\n      \"isDeleted\": false,\n      \"isActive\": true,\n      \"createdAt\": \"2023-07-15T01:01:42.849Z\",\n      \"updatedAt\": \"2023-08-22T23:05:43.088Z\"\n    }\n  ]\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "deleteuserRole",
+              "request": {
+                "url": {
+                  "raw": "{{url}}/desktop/api/v1/userrole/delete/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "desktop",
+                    "api",
+                    "v1",
+                    "userrole",
+                    "delete",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isWarning\": true\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "deleteuserRole_response",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/desktop/api/v1/userrole/delete/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"userId\": 285,\n      \"roleId\": 656,\n      \"id\": 101,\n      \"isDeleted\": false,\n      \"isActive\": true,\n      \"createdAt\": \"2023-07-15T01:01:42.849Z\",\n      \"updatedAt\": \"2023-08-22T23:05:43.088Z\"\n    }\n  ]\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
