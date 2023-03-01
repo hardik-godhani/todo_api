@@ -38,7 +38,7 @@ const register = async (req, res) => {
       dataToRegister.password = Math.random().toString(36).slice(2);
     }
 
-    let checkUniqueFields = await checkUniqueFieldsInDatabase(user,[ 'username', 'email' ],dataToRegister,'REGISTER');
+    let checkUniqueFields = await checkUniqueFieldsInDatabase(user,[ 'email' ],dataToRegister,'REGISTER');
     if (checkUniqueFields.isDuplicate){
       return res.validationError({ message : `${checkUniqueFields.value} already exists.Unique ${checkUniqueFields.field} are allowed.` });
     }

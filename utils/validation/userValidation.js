@@ -15,8 +15,6 @@ exports.schemaKeys = joi.object({
   name: joi.string().allow(null).allow(''),
   isActive: joi.boolean(),
   isDeleted: joi.boolean(),
-  mobileNo: joi.string().allow(null).allow(''),
-  username: joi.string().allow(null).allow('')
 }).unknown(true);
 
 /** validation keys and properties of user for updation */
@@ -26,8 +24,6 @@ exports.updateSchemaKeys = joi.object({
   name: joi.string().allow(null).allow(''),
   isActive: joi.boolean(),
   isDeleted: joi.boolean(),
-  mobileNo: joi.string().allow(null).allow(''),
-  username: joi.string().allow(null).allow(''),
   id: joi.number().integer()
 }).unknown(true);
 
@@ -42,8 +38,6 @@ exports.findFilterKeys = joi.object({
       name: joi.alternatives().try(joi.array().items(),joi.string(),joi.object()),
       isActive: joi.alternatives().try(joi.array().items(),joi.boolean(),joi.object()),
       isDeleted: joi.alternatives().try(joi.array().items(),joi.boolean(),joi.object()),
-      mobileNo: joi.alternatives().try(joi.array().items(),joi.string(),joi.object()),
-      username: joi.alternatives().try(joi.array().items(),joi.string(),joi.object()),
       id: joi.any()
     }).unknown(true),])
   ),
